@@ -46,7 +46,6 @@ const LoginForm = () => {
           .post(`${BASE_URL}users/auth`, userInfo)
           .then((res) => {
             if (res.data.success) {
-              console.log("Logged In:", res.data);
               setUserInfo({ email: "", password: "" });
               setProfile(res.data.user);
               setIsLoggedIn(true);
@@ -65,7 +64,6 @@ const LoginForm = () => {
   const storeData = async (data) => {
     // sets data to async storage
     try {
-      console.log("SET-", data);
       await AsyncStorage.setItem("data", JSON.stringify(data));
     } catch (e) {
       console.DIR("SET error-", e);

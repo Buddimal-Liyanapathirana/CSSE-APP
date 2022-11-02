@@ -13,7 +13,7 @@ import {
 } from "@react-navigation/drawer";
 
 import Home from "./components/Home";
-import Tasks from "./components/MyAccount";
+import MyAccount from "./components/MyAccount";
 import { useLogin } from "./context/LoginProvider";
 import { getData } from "./utils/methods";
 
@@ -104,7 +104,7 @@ const DrawerNavigator = () => {
       drawerContent={(props) => <CustomDrawer {...props} />}
     >
       <Drawer.Screen component={Home} name="Home" />
-      <Drawer.Screen component={Tasks} name="My Account" />
+      <Drawer.Screen component={MyAccount} name="My Account" />
     </Drawer.Navigator>
   );
 };

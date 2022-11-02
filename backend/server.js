@@ -7,6 +7,7 @@ const cors = require("@koa/cors");
 
 const dbConnect = require("./utils/dbUtil");
 const userRoutes = require("./routes/userRoutes");
+const userAccountRoutes = require("./routes/userAccountRoutes");
 
 const app = new Koa();
 const router = new KoaRouter();
@@ -15,6 +16,8 @@ app.use(bodyparser());
 app.use(cors());
 app.use(json());
 app.use(router.routes()).use(router.allowedMethods());
+
+app.use(userAccountRoutes.routes());
 app.use(userRoutes.routes());
 
 router.get("/", (ctx) => {

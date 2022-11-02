@@ -1,4 +1,5 @@
 const User = require("../models/userModel");
+const UserAccount = require("../models/userAccountModel");
 
 const login = async (ctx) => {
   const { email, password } = ctx.request.body;
@@ -10,6 +11,7 @@ const login = async (ctx) => {
       return (ctx.body = {
         success: true,
         user: user.name,
+        userAccount: user,
       });
     }
     return (ctx.body = {
@@ -94,6 +96,7 @@ const deleteUser = async (ctx) => {
   try {
     const id = ctx.params.id;
     const user = await User.findByIdAndDelete(id);
+    if (user && user.account) await UserAccount.findByIdAndDelete(user.account);
     return (ctx.body = { success: true, user });
   } catch (err) {
     return (ctx.body = { error: err.message });

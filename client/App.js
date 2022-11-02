@@ -1,8 +1,10 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { LogBox } from "react-native";
+LogBox.ignoreLogs(["EventEmitter.removeListener"]);
 
-import MainNavigator from './app/MainNavigator';
-import LoginProvider from './app/context/LoginProvider';
+import MainNavigator from "./app/MainNavigator";
+import LoginProvider from "./app/context/LoginProvider";
 
 export default function App() {
   return (

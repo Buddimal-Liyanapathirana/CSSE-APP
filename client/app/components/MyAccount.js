@@ -19,19 +19,37 @@ const MyAccount = () => {
     //   </View>
     <Card>
       <Card.Title
-        title="Card Title"
+        title="My account"
         left={LeftContent}
+        style={{ backgroundColor: "#F7F7F7" }}
         // subtitle="Card Subtitle"
       />
 
-      <Card.Content>
-        <Title>Card title</Title>
-        <Paragraph>Card content</Paragraph>
+      <Card.Content style={{ backgroundColor: "#F7F7F7", width: "50%" }}>
+        <Card.Cover
+          // source={{ uri: "https://picsum.photos/700" }}
+          source={{
+            uri: "https://image.shutterstock.com/image-photo/young-handsome-man-beard-wearing-260nw-1768126784.jpg",
+          }}
+          style={{ opacity: 0.8 }}
+        />
+        <Title>Balance : LKR 1250</Title>
+        <Title>Valid</Title>
+        {/* <Paragraph>Card content</Paragraph> */}
       </Card.Content>
-      <Card.Cover source={{ uri: "https://picsum.photos/700" }} />
-      <Card.Actions>
-        <Button>Cancel</Button>
-        <Button>Ok</Button>
+
+      <Card.Actions style={{ backgroundColor: "#F7F7F7", marginLeft: "10%" }}>
+        {/* <Button>Cancel</Button> */}
+        <Button mode="contained" color="#2A9000" style={{ width: "40%" }}>
+          Begin trip
+        </Button>
+        <Button
+          mode="contained"
+          color="#F57E3A"
+          style={{ width: "40%", marginLeft: 30 }}
+        >
+          Deactivate
+        </Button>
       </Card.Actions>
     </Card>
   );

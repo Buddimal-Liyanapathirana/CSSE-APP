@@ -41,13 +41,13 @@ const LoginForm = () => {
   const submitForm = async () => {
     if (isValidForm()) {
       try {
-        const postRequest = () => {};
         await axios
           .post(`${BASE_URL}users/auth`, userInfo)
           .then((res) => {
             if (res.data.success) {
               setUserInfo({ email: "", password: "" });
               setProfile(res.data.user);
+              console.log(res.data.user);
               setIsLoggedIn(true);
               storeData(res.data.userAccount);
             } else {

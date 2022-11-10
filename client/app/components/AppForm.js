@@ -44,9 +44,9 @@ export default function AppForm({ navigation }) {
     <View style={{ flex: 1, paddingTop: 120 }}>
       <View style={{ height: 80 }}>
         <FormHeader
-          leftHeading="Welcome "
-          rightHeading="Back"
-          subHeading="YouTube Task Manager"
+          leftHeading="Travalee "
+          // rightHeading="Travalee"
+          subHeading="Welcome"
           rightHeaderOpacity={rightHeaderOpacity}
           leftHeaderTranslateX={leftHeaderTranslateX}
           rightHeaderTranslateY={rightHeaderTranslateY}
